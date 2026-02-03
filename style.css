@@ -1,25 +1,32 @@
-/* Reset and Base Styles */
-body {
+/* Updated Base Styles */
+html, body {
     margin: 0;
     padding: 0;
-    background-color: #050505; /* Deep black to match logo background */
+    background-color: #050505; /* Deep black */
     color: #ffffff;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    /* Allow scrolling! */
+    overflow-x: hidden; 
+    overflow-y: auto;
+    min-height: 100vh;
 }
 
-/* Container for all content */
+/* Container: Use padding instead of fixed centering for better mobile feel */
 .container {
     text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 120px);
 }
 
 /* The Logo - Adding a subtle red glow behind it */
 .logo {
-    max-width: 400px;
+    width: 90%;          /* Scale down on small screens */
+    max-width: 450px;    /* Don't get too big on desktop */
+    height: auto;        /* Keep proportions */
     filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.4));
     animation: pulse 4s infinite ease-in-out;
 }
