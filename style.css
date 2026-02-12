@@ -55,6 +55,7 @@ h1 {
 .store-announcement {
     padding-top: 60px;
     padding-bottom: 60px; /* Increase this number for more space */
+    text-align: center;
 }
 
 .videos h2 {
@@ -90,17 +91,17 @@ h1 {
 .tagline {
     font-size: clamp(1.rem, 4vw, 2rem);
     font-weight: 800;
-    color: #fff;
+    color: #ffff00;
     text-transform: uppercase;
     letter-spacing: 4px;
     margin: 10px 0 5px 0;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 10px #ffff00, 0 0 20px #b8b800; /* Adds a yellow neon glow */
 }
 
 .sub-tag {
     font-size: 0.9rem;
     letter-spacing: 4px;
-    color: #666;
+    color: #bbbbbb; /* A light, clean grey */
     text-transform: uppercase;
     margin-top: 10px;
     margin: 5px 0 0 0;
@@ -199,4 +200,20 @@ footer {
     background: linear-gradient(90deg, transparent, #ff003c, transparent);
     margin: 0 auto;
     box-shadow: 0 0 10px #ff003c;
+}
+
+/* Trademark Symbol Styling */
+.tm {
+    font-size: 0.35em;       /* Makes it roughly 1/3 the size of the parent text */
+    vertical-align: super;  /* Lifts it to the top of the letters */
+    margin-left: 5px;       /* Adds a tiny gap so it's not touching the last letter */
+    letter-spacing: normal; /* Prevents the header's wide spacing from stretching the TM */
+    text-shadow: none;      /* Optional: removes the heavy glow if it's too blurry */
+    font-weight: normal;    /* Ensures it doesn't look too bold */
+}
+
+/* Ensure the smaller TM symbol inherits the yellow glow but stays small */
+.tagline .tm {
+    color: #ffff00;
+    text-shadow: 0 0 5px #ffff00;
 }
