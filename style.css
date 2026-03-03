@@ -223,19 +223,24 @@ footer {
     margin-top: 25px;
     padding: 15px 30px;
     background-color: transparent;
-    color: #ffff00; /* Matching your yellow text */
+
+    /* This forces the color to be yellow instead of browser blue */
+    color: #ffff00 !important;
+
     text-decoration: none;
     font-weight: 800;
     font-size: 1.2rem;
     letter-spacing: 2px;
     border: 2px solid #ffff00;
+    text-transform: uppercase;
     transition: all 0.3s ease;
     box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
 }
 
+/* Hover state to make it interactive */
 .store-button:hover {
     background-color: #ffff00;
-    color: #000;
+    color: #000 !important;
     box-shadow: 0 0 25px #ffff00;
-    transform: scale(1.05); /* Slight "pop" on hover */
+    transform: scale(1.05);
 }
