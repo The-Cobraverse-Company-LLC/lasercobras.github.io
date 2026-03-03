@@ -217,3 +217,25 @@ footer {
     color: #ffff00;
     text-shadow: 0 0 5px #ffff00;
 }
+
+.store-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 30px;
+    background-color: transparent;
+    color: #ffff00; /* Matching your yellow text */
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    border: 2px solid #ffff00;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+}
+
+.store-button:hover {
+    background-color: #ffff00;
+    color: #000;
+    box-shadow: 0 0 25px #ffff00;
+    transform: scale(1.05); /* Slight "pop" on hover */
+}
