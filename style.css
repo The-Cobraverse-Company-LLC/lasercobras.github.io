@@ -188,6 +188,22 @@ footer {
     color: #444;
 }
 
+.footer-links {
+    margin-top: 15px;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff003c;
+    text-shadow: 0 0 10px #ff003c;
+}
+
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
