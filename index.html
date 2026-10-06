@@ -16,6 +16,13 @@
 </head>
 <body>
 
+    <nav class="quick-jump" aria-label="Quick jump">
+        <a href="#game">IPHONE GAME</a>
+        <a href="#store">GEAR STORE</a>
+        <a href="#videos">MISSION FILES</a>
+        <a href="#more">COBRAVERSE</a>
+    </nav>
+
     <section class="hero">
         <h1>LASER COBRAS!<span class="tm">&trade;</span></h1>
         <div class="logo-container">
@@ -28,7 +35,23 @@
 
     <div class="laser-divider"></div>
 
-<section class="store-announcement">
+    <section class="store-announcement" id="game">
+        <div class="content-box">
+            <p class="coming-soon-badge">COMING SOON TO IPHONE</p>
+            <h2>LASER COBRAS! ASSAULT</h2>
+            <p>BLAST THROUGH ENDLESS WAVES OF MECHA COBRAS! PILOT A LASER COBRA, MELT THE INVADERS WITH YOUR EYE-LASERS, AND SURVIVE THE TOWERING MECHA SCORPION BOSS IN THIS FAST ARCADE SHOOTER.</p>
+
+            <a href="https://cobraverse.net/#games" class="store-button" target="_blank" rel="noopener">
+                LEARN MORE
+            </a>
+
+            <div class="glow-bar"></div>
+        </div>
+    </section>
+
+    <div class="laser-divider"></div>
+
+<section class="store-announcement" id="store">
         <div class="content-box">
             <h2>GEAR STORE</h2>
             <p>THE STRIKE HAS BEGUN. GET YOUR EXCLUSIVE LASER COBRAS! APPAREL & EQUIPMENT.</p>
@@ -43,7 +66,7 @@
 
     <div class="laser-divider"></div>
 
-    <section class="videos">
+    <section class="videos" id="videos">
         <h2>MISSION FILES</h2>
         <div class="video-list">
 
@@ -77,7 +100,7 @@
                 </div>
             </div>
 
-            <h2 style="margin: 60px 0;">MORE FROM THE COBRAVERSE</h2>
+            <h2 id="more" style="margin: 60px 0;">MORE FROM THE COBRAVERSE</h2>
 
             <div class="video-item">
                 <div class="video-window">
@@ -113,5 +136,35 @@
 
 <script data-goatcounter="https://lasercobras.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+    <script>
+        // Highlight the quick-jump link for the section currently in view
+        (function () {
+            var nav = document.querySelector('.quick-jump');
+            var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+            var targets = links.map(function (link) {
+                return document.querySelector(link.getAttribute('href'));
+            });
+
+            function update() {
+                var line = nav.offsetHeight + 40;
+                var current = -1;
+                targets.forEach(function (target, i) {
+                    if (target.getBoundingClientRect().top <= line) current = i;
+                });
+                // At the very bottom the last section may never reach the line
+                if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+                    current = links.length - 1;
+                }
+                links.forEach(function (link, i) {
+                    link.classList.toggle('active', i === current);
+                });
+            }
+
+            window.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update);
+            update();
+        })();
+    </script>
+
 </body>
 </html>

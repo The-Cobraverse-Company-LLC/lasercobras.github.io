@@ -18,6 +18,72 @@ body {
     background-color: #050505;
 }
 
+/* Quick-Jump Nav: a slim bar that stays pinned to the top of the page */
+html {
+    scroll-behavior: smooth;
+}
+
+.quick-jump {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 30px;
+    padding: 14px 20px;
+    background-color: rgba(5, 5, 5, 0.92);
+    border-bottom: 1px solid #ff003c;
+    box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
+}
+
+.quick-jump a {
+    color: #ffff00;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.quick-jump a:hover,
+.quick-jump a.active {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00;
+}
+
+/* Keep jump targets from landing underneath the pinned bar */
+#game, #store, #videos, #more {
+    scroll-margin-top: 60px;
+}
+
+@media (max-width: 850px) {
+    .quick-jump {
+        gap: 6px 16px;
+        padding: 10px 12px;
+    }
+
+    .quick-jump a {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    #game, #store, #videos, #more {
+        scroll-margin-top: 75px;
+    }
+}
+
+/* Phones: two tidy rows of two instead of an uneven wrap */
+@media (max-width: 480px) {
+    .quick-jump {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        text-align: center;
+        gap: 8px 28px;
+    }
+}
+
 /* Hero Section */
 .hero {
     min-height: auto; /* Changed from 100vh to allow it to be compact */
@@ -77,6 +143,18 @@ h1 {
     padding: 40px;
     box-shadow: inset 0 0 20px #ff003c, 0 0 20px #ff003c;
     max-width: 600px;
+}
+
+.coming-soon-badge {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 5px 14px;
+    border: 1px solid #ffff00;
+    color: #ffff00;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #ffff00;
 }
 
 .glow-bar {
